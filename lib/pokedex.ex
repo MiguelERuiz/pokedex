@@ -1,18 +1,10 @@
 defmodule Pokedex do
   @moduledoc """
-  Documentation for Pokedex.
+  Documentation for Pokedex: an API wrapper library for https://pokeapi.co
   """
 
-  @doc """
-  Hello world.
+  use Tesla
+  plug Tesla.Middleware.BaseUrl, "https://pokeapi.co/api/v2"
+  plug Tesla.Middleware.JSON
 
-  ## Examples
-
-      iex> Pokedex.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end
