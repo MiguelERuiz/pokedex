@@ -3,7 +3,7 @@ defmodule Pokedex.Encounters do
     Pokedex.get("/encounter-method/" <> to_string(id))
   end
   def encounter_method(name) when is_atom(name) do
-    name = (name |> Atom.to_string) |> String.replace("_", "-")
+    name = Pokedex.atom_to_pokedex_string(name)
     Pokedex.get("/encounter-method/" <> name)
   end
   def encounter_method(name) when is_bitstring(name) do
@@ -21,7 +21,7 @@ defmodule Pokedex.Encounters do
     Pokedex.get("/encounter-condition-value/" <> to_string(id))
   end
   def encounter_condition_value(name) when is_atom(name) do
-    name = (name |> Atom.to_string) |> String.replace("_", "-")
+    name = Pokedex.atom_to_pokedex_string(name)
     Pokedex.get("/encounter-condition-value/" <> name)
   end
   def encounter_condition_value(name) when is_bitstring(name) do

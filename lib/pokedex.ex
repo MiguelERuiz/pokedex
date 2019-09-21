@@ -7,4 +7,7 @@ defmodule Pokedex do
   plug Tesla.Middleware.BaseUrl, "https://pokeapi.co/api/v2"
   plug Tesla.Middleware.JSON
 
+  def atom_to_pokedex_string(atom) do
+    (atom |> Atom.to_string) |> String.replace("_", "-")
+  end
 end

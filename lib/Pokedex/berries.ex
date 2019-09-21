@@ -10,7 +10,7 @@ defmodule Pokedex.Berries do
     Pokedex.get("/berry-firmness/" <> to_string(id))
   end
   def berry_firmness(name) when is_atom(name) do
-    name = (name |> Atom.to_string) |> String.replace("_", "-")
+    name = Pokedex.atom_to_pokedex_string(name)
     Pokedex.get("/berry-firmness/" <> name)
   end
   def berry_firmness(name) when is_bitstring(name) do
