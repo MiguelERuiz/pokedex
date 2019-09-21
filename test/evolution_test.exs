@@ -1,5 +1,8 @@
 defmodule EvolutionTest do
+  @moduledoc false
+
   use ExUnit.Case, async: true
+  doctest Pokedex.Evolution
 
   test "get evolution chain by numeric id" do
     assert {:ok, env} = Pokedex.Evolution.evolution_chain(1)

@@ -1,4 +1,7 @@
 defmodule Pokedex.Evolution do
+  @moduledoc """
+  Documentation for Evolution section https://pokeapi.co/docs/v2.html/#evolution-section
+  """
   def evolution_chain(id) when is_number(id) do
     Pokedex.get("/evolution-chain/" <> to_string(id))
   end

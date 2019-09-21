@@ -1,4 +1,7 @@
 defmodule Pokedex.Berries do
+  @moduledoc """
+  Documentation for https://pokeapi.co/docs/v2.html/#berries-section
+  """
   def berry(id) when is_number(id) or is_atom(id) do
     Pokedex.get("/berry/" <> to_string(id))
   end

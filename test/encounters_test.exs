@@ -1,5 +1,8 @@
 defmodule EncountersTest do
-  use ExUnit.Case
+  @moduledoc false
+
+  use ExUnit.Case, async: true
+  doctest Pokedex.Encounters
 
   test "get encounter method by numeric id" do
     assert {:ok, env} = Pokedex.Encounters.encounter_method(3)

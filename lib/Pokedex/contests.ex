@@ -1,4 +1,7 @@
 defmodule Pokedex.Contests do
+  @moduledoc """
+  Documentation for https://pokeapi.co/docs/v2.html/#contests-section
+  """
   def contest_type(id) when is_number(id) or is_atom(id) do
     Pokedex.get("/contest-type/" <> to_string(id))
   end

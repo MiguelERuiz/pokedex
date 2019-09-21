@@ -1,4 +1,6 @@
 defmodule PokedexTest do
+  @moduledoc false
+
   use ExUnit.Case
   doctest Pokedex
 

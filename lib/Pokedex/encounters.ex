@@ -1,4 +1,7 @@
 defmodule Pokedex.Encounters do
+  @moduledoc """
+  Documentation for https://pokeapi.co/docs/v2.html/#encounters-section
+  """
   def encounter_method(id) when is_number(id) do
     Pokedex.get("/encounter-method/" <> to_string(id))
   end

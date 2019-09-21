@@ -1,5 +1,8 @@
 defmodule BerriesTest do
-  use ExUnit.Case
+  @moduledoc false
+
+  use ExUnit.Case, async: true
+  doctest Pokedex.Berries
 
   test "get berry info by numeric id" do
     assert {:ok, env} = Pokedex.Berries.berry(1)
@@ -74,7 +77,7 @@ defmodule BerriesTest do
   end
 
   test "get not found response for a not found berry id" do
-    assert {:ok, env} = Pokedex.Berries.berry(12345)
+    assert {:ok, env} = Pokedex.Berries.berry(1234)
     assert env.status == 404
   end
 
@@ -89,7 +92,7 @@ defmodule BerriesTest do
   end
 
   test "get not found response for a not found numeric berry firmness id" do
-    assert {:ok, env} = Pokedex.Berries.berry_firmness(12345)
+    assert {:ok, env} = Pokedex.Berries.berry_firmness(1234)
     assert env.status == 404
   end
 
@@ -109,7 +112,7 @@ defmodule BerriesTest do
   end
 
   test "get not found response for a not found berry flavor id" do
-    assert {:ok, env} = Pokedex.Berries.berry_flavor(12345)
+    assert {:ok, env} = Pokedex.Berries.berry_flavor(1234)
     assert env.status == 404
   end
 

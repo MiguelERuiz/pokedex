@@ -1,5 +1,8 @@
 defmodule ContestsTest do
-  use ExUnit.Case
+  @moduledoc false
+
+  use ExUnit.Case, async: true
+  doctest Pokedex.Contests
 
   test "get contest type by numeric id" do
     assert {:ok, env} = Pokedex.Contests.contest_type(1)
