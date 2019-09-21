@@ -1,0 +1,33 @@
+* TODO-LIST
+
+** Endpoints
+*** TODO Locations
+- Location
+- Location Area
+- Pal Park Area
+- Region
+*** TODO Moves
+- Move
+- Move Aliment
+- Move Battle Style
+- Move Category
+- Move Learn Method
+- Move Target
+*** TODO Pokemon
+- Abilites
+- Characteristics
+- Egg Groups
+- Genders
+- Growth Rates
+- Natures
+- Pokeathlon Stats
+- Pokemon
+- Pokemon Colors
+- Pokemon Forms
+- Pokemon Habitats
+- Pokemon Shapes
+- Pokemon Species
+- Stats
+- Types
+*** TODO Utility
+- Languages
