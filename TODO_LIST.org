@@ -32,6 +32,7 @@
 *** TODO Utility
 - Languages
 
-** Functionality
+** TODO Functionality
 *** Caching calls
+*** Timeout
 ** Documentation
