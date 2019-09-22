@@ -36,4 +36,4 @@
 ** DONE Functionality
 *** Caching calls
 *** Timeout
-** TODO Documentation
+** DONE Documentation
