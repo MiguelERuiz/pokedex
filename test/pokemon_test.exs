@@ -10,7 +10,7 @@ defmodule PokemonTests do
   end
 
   test "get ability by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Pokemon.ability(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Pokemon.ability("1")
     assert status == 200
     assert name == "stench"
   end
@@ -28,13 +28,13 @@ defmodule PokemonTests do
   end
 
   test "get characteristic by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Pokemon.gender(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Pokemon.characteristic(1)
     assert status == 200
     assert id == 1
   end
 
   test "get characteristic by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Pokemon.gender("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Pokemon.characteristic("1")
     assert status == 200
     assert id == 1
   end
@@ -118,7 +118,7 @@ defmodule PokemonTests do
   end
 
   test "get nature by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Pokemon.nature(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Pokemon.nature("1")
     assert status == 200
     assert name == "hardy"
   end
@@ -142,7 +142,7 @@ defmodule PokemonTests do
   end
 
   test "get pokeathlon stat by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Pokemon.pokeathlon_stat(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Pokemon.pokeathlon_stat("1")
     assert status == 200
     assert name == "speed"
   end
