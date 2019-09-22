@@ -31,3 +31,7 @@
 - Types
 *** TODO Utility
 - Languages
+
+** Functionality
+*** Caching calls
+** Documentation
