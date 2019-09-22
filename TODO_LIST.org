@@ -6,7 +6,7 @@
 - Location Area
 - Pal Park Area
 - Region
-*** TODO Moves
+*** DONE Moves
 - Move
 - Move Aliment
 - Move Battle Style
