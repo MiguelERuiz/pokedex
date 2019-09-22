@@ -11,6 +11,7 @@
 - Move Aliment
 - Move Battle Style
 - Move Category
+- Move Damage Class
 - Move Learn Method
 - Move Target
 *** DONE Pokemon
