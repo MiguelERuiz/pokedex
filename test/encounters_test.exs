@@ -65,7 +65,10 @@ defmodule EncountersTest do
   end
 
   test "get encounter condition value by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition_value(:swarm_yes)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} =
+    :swarm_yes
+    |>
+    Pokedex.Encounters.encounter_condition_value
     assert status == 200
     assert name == "swarm-yes"
   end
