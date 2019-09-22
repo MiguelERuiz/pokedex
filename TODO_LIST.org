@@ -1,7 +1,7 @@
 * TODO-LIST
 
 ** Endpoints
-*** TODO Locations
+*** DONE Locations
 - Location
 - Location Area
 - Pal Park Area
@@ -13,7 +13,7 @@
 - Move Category
 - Move Learn Method
 - Move Target
-*** TODO Pokemon
+*** DONE Pokemon
 - Abilites
 - Characteristics
 - Egg Groups
