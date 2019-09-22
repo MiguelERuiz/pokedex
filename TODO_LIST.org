@@ -13,7 +13,7 @@
 - Move Category
 - Move Learn Method
 - Move Target
-*** TODO Pokemon
+*** DONE Pokemon
 - Abilites
 - Characteristics
 - Egg Groups
