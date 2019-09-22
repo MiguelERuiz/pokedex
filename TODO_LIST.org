@@ -30,7 +30,7 @@
 - Pokemon Species
 - Stats
 - Types
-*** TODO Utility
+*** DONE Utility
 - Languages
 
 ** TODO Functionality
