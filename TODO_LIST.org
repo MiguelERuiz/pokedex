@@ -1,0 +1,39 @@
+* TODO-LIST
+
+** Endpoints
+*** DONE Locations
+- Location
+- Location Area
+- Pal Park Area
+- Region
+*** DONE Moves
+- Move
+- Move Aliment
+- Move Battle Style
+- Move Category
+- Move Damage Class
+- Move Learn Method
+- Move Target
+*** DONE Pokemon
+- Abilites
+- Characteristics
+- Egg Groups
+- Genders
+- Growth Rates
+- Natures
+- Pokeathlon Stats
+- Pokemon
+- Pokemon Colors
+- Pokemon Forms
+- Pokemon Habitats
+- Pokemon Shapes
+- Pokemon Species
+- Stats
+- Types
+*** DONE Utility
+- Languages
+
+** DONE Functionality
+*** Caching calls
+*** Timeout
+** DONE Documentation
