@@ -53,8 +53,8 @@ defmodule Pokedex.Items do
     Pokedex.get(@item_fling_effect_endpoint <> name)
   end
 
-  def item_pocket(id) when is_number(id) or is_atom(id) do
-    Pokedex.get(@item_pocket_endpoint <> to_string(id))
+  def item_pocket(id_name) when is_number(id_name) or is_atom(id_name) do
+    Pokedex.get(@item_pocket_endpoint <> to_string(id_name))
   end
   def item_pocket(name) when is_bitstring(name) do
     Pokedex.get(@item_pocket_endpoint <> name)

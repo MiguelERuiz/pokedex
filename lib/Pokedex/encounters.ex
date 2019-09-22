@@ -18,8 +18,8 @@ defmodule Pokedex.Encounters do
     Pokedex.get(@encounter_method_endpoint <> name)
   end
 
-  def encounter_condition(id) when is_number(id) or is_atom(id) do
-    Pokedex.get(@encounter_condition_endpoint  <> to_string(id))
+  def encounter_condition(id_name) when is_number(id_name) or is_atom(id_name) do
+    Pokedex.get(@encounter_condition_endpoint  <> to_string(id_name))
   end
   def encounter_condition(name) when is_bitstring(name) do
     Pokedex.get(@encounter_condition_endpoint  <> name)

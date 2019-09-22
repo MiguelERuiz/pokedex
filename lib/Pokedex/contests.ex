@@ -7,8 +7,8 @@ defmodule Pokedex.Contests do
   @contest_effect_endpoint "/contest-effect/"
   @super_contest_effect_endpoint "/super-contest-effect/"
 
-  def contest_type(id) when is_number(id) or is_atom(id) do
-    Pokedex.get(@contest_type_endpoint <> to_string(id))
+  def contest_type(id_name) when is_number(id_name) or is_atom(id_name) do
+    Pokedex.get(@contest_type_endpoint <> to_string(id_name))
   end
   def contest_type(name) when is_bitstring(name) do
     Pokedex.get(@contest_type_endpoint <> name)

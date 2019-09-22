@@ -30,8 +30,8 @@ defmodule Pokedex.Games do
     Pokedex.get(@pokedex_endpoint <> name)
   end
 
-  def version(id) when is_number(id) or is_atom(id) do
-    Pokedex.get(@version_endpoint <> to_string(id))
+  def version(id_name) when is_number(id_name) or is_atom(id_name) do
+    Pokedex.get(@version_endpoint <> to_string(id_name))
   end
   def version(name) when is_bitstring(name) do
     Pokedex.get(@version_endpoint <> name)
