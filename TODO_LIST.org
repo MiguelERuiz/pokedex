@@ -33,7 +33,7 @@
 *** DONE Utility
 - Languages
 
-** TODO Functionality
+** DONE Functionality
 *** Caching calls
 *** Timeout
-** Documentation
+** TODO Documentation

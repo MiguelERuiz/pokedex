@@ -5,6 +5,8 @@ defmodule Pokedex do
 
   use Tesla
   plug Tesla.Middleware.BaseUrl, "https://pokeapi.co/api/v2"
+  plug Tesla.Middleware.Headers, [{"cache-control", "private"}]
+  plug Tesla.Middleware.Timeout, timeout: 2_000
   plug Tesla.Middleware.JSON
 
   def atom_to_pokedex_string(atom) do
