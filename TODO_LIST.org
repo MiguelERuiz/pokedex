@@ -1,7 +1,7 @@
 * TODO-LIST
 
 ** Endpoints
-*** TODO Locations
+*** DONE Locations
 - Location
 - Location Area
 - Pal Park Area
