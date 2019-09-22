@@ -5,51 +5,51 @@ defmodule ContestsTest do
   doctest Pokedex.Contests
 
   test "get contest type by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.contest_type(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Contests.contest_type(1)
     assert status == 200
-    assert body["name"] == "cool"
+    assert name == "cool"
   end
 
   test "get contest type by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.contest_type("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Contests.contest_type("1")
     assert status == 200
-    assert body["name"] == "cool"
+    assert name == "cool"
   end
 
   test "get contest type by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.contest_type(:cool)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Contests.contest_type(:cool)
     assert status == 200
-    assert body["name"] == "cool"
+    assert name == "cool"
   end
 
   test "get contest type by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.contest_type("cool")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Contests.contest_type("cool")
     assert status == 200
-    assert body["name"] == "cool"
+    assert name == "cool"
   end
 
   test "get contest effect by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.contest_effect(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Contests.contest_effect(1)
     assert status == 200
-    assert body["id"] == 1
+    assert id == 1
   end
 
   test "get contest effect by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.contest_effect("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Contests.contest_effect("1")
     assert status == 200
-    assert body["id"] == 1
+    assert id == 1
   end
 
   test "get super contest effect by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.super_contest_effect(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Contests.super_contest_effect(1)
     assert status == 200
-    assert body["id"] == 1
+    assert id == 1
   end
 
   test "get super contest effect by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Contests.super_contest_effect("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Contests.super_contest_effect("1")
     assert status == 200
-    assert body["id"] == 1
+    assert id == 1
   end
 
   test "get not found response for a not found numeric contest type id" do

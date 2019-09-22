@@ -5,33 +5,33 @@ defmodule EvolutionTest do
   doctest Pokedex.Evolution
 
   test "get evolution chain by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Evolution.evolution_chain(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Evolution.evolution_chain(1)
     assert status == 200
-    assert body["id"] == 1
+    assert id == 1
   end
 
   test "get evolution chain by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Evolution.evolution_chain("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"id" => id}}} = Pokedex.Evolution.evolution_chain("1")
     assert status == 200
-    assert body["id"] == 1
+    assert id == 1
   end
 
   test "get evolution trigger by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Evolution.evolution_trigger(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Evolution.evolution_trigger(1)
     assert status == 200
-    assert body["name"] == "level-up"
+    assert name == "level-up"
   end
 
   test "get evolution trigger by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Evolution.evolution_trigger(:level_up)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Evolution.evolution_trigger(:level_up)
     assert status == 200
-    assert body["name"] == "level-up"
+    assert name == "level-up"
   end
 
   test "get evolution trigger by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Evolution.evolution_trigger("level-up")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Evolution.evolution_trigger("level-up")
     assert status == 200
-    assert body["name"] == "level-up"
+    assert name == "level-up"
   end
 
   test "get not found response for a not found numeric evolution chain id" do

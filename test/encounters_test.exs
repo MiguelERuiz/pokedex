@@ -5,75 +5,75 @@ defmodule EncountersTest do
   doctest Pokedex.Encounters
 
   test "get encounter method by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_method(3)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_method(3)
     assert status == 200
-    assert body["name"] == "good-rod"
+    assert name == "good-rod"
   end
 
   test "get encounter method by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_method("3")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_method("3")
     assert status == 200
-    assert body["name"] == "good-rod"
+    assert name == "good-rod"
   end
 
   test "get encounter method by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_method(:good_rod)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_method(:good_rod)
     assert status == 200
-    assert body["name"] == "good-rod"
+    assert name == "good-rod"
   end
 
   test "get encounter method by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_method("good-rod")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_method("good-rod")
     assert status == 200
-    assert body["name"] == "good-rod"
+    assert name == "good-rod"
   end
 
   test "get encounter condition by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition(1)
     assert status == 200
-    assert body["name"] == "swarm"
+    assert name == "swarm"
   end
 
   test "get encounter condition by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition("1")
     assert status == 200
-    assert body["name"] == "swarm"
+    assert name == "swarm"
   end
 
   test "get encounter condition by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition(:swarm)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition(:swarm)
     assert status == 200
-    assert body["name"] == "swarm"
+    assert name == "swarm"
   end
 
   test "get encounter condition by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition("swarm")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition("swarm")
     assert status == 200
-    assert body["name"] == "swarm"
+    assert name == "swarm"
   end
 
   test "get encounter condition value by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition_value(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition_value(1)
     assert status == 200
-    assert body["name"] == "swarm-yes"
+    assert name == "swarm-yes"
   end
 
   test "get encounter condition value by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition_value("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition_value("1")
     assert status == 200
-    assert body["name"] == "swarm-yes"
+    assert name == "swarm-yes"
   end
 
   test "get encounter condition value by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition_value(:swarm_yes)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition_value(:swarm_yes)
     assert status == 200
-    assert body["name"] == "swarm-yes"
+    assert name == "swarm-yes"
   end
 
   test "get encounter condition value by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Encounters.encounter_condition_value("swarm-yes")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Encounters.encounter_condition_value("swarm-yes")
     assert status == 200
-    assert body["name"] == "swarm-yes"
+    assert name == "swarm-yes"
   end
 
   test "get not found response for a not found numeric encounter method id" do
@@ -92,7 +92,7 @@ defmodule EncountersTest do
   end
 
   test "get not found response for a not found string encounter method name" do
-    assert {:ok, env} = Pokedex.Encounters.encounter_method("not-an-encounter-method")
+    assert {:ok, %Tesla.Env{status: status}} = Pokedex.Encounters.encounter_method("not-an-encounter-method")
     assert status == 404
   end
 
@@ -107,7 +107,7 @@ defmodule EncountersTest do
   end
 
   test "get not found response for a not found atom encounter condition name" do
-    assert {:ok, env} = Pokedex.Encounters.encounter_condition(:not_an_encounter_condition)
+    assert {:ok, %Tesla.Env{status: status}} = Pokedex.Encounters.encounter_condition(:not_an_encounter_condition)
     assert status == 404
   end
 

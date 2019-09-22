@@ -5,75 +5,75 @@ defmodule BerriesTest do
   doctest Pokedex.Berries
 
   test "get berry info by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry(1)
     assert status == 200
-    assert body["name"] == "cheri"
+    assert name == "cheri"
   end
 
   test "get berry info by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry("1")
     assert status == 200
-    assert body["name"] == "cheri"
+    assert name == "cheri"
   end
 
   test "get berry info by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry(:cheri)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry(:cheri)
     assert status == 200
-    assert body["name"] == "cheri"
+    assert name == "cheri"
   end
 
   test "get berry info by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry("cheri")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry("cheri")
     assert status == 200
-    assert body["name"] == "cheri"
+    assert name == "cheri"
   end
 
   test "get berry firmness by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_firmness(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_firmness(1)
     assert status == 200
-    assert body["name"] == "very-soft"
+    assert name == "very-soft"
   end
 
   test "get berry firmness by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_firmness("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_firmness("1")
     assert status == 200
-    assert body["name"] == "very-soft"
+    assert name == "very-soft"
   end
 
   test "get berry firmness by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_firmness(:very_soft)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_firmness(:very_soft)
     assert status == 200
-    assert body["name"] == "very-soft"
+    assert name == "very-soft"
   end
 
   test "get berry firmness by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_firmness("very-soft")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_firmness("very-soft")
     assert status == 200
-    assert body["name"] == "very-soft"
+    assert name == "very-soft"
   end
 
   test "get berry flavor by numeric numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_flavor(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_flavor(1)
     assert status == 200
-    assert body["name"] == "spicy"
+    assert name == "spicy"
   end
 
   test "get berry flavor by numeric string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_flavor("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_flavor("1")
     assert status == 200
-    assert body["name"] == "spicy"
+    assert name == "spicy"
   end
 
   test "get berry flavor by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_flavor(:spicy)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_flavor(:spicy)
     assert status == 200
-    assert body["name"] == "spicy"
+    assert name == "spicy"
   end
 
   test "get berry flavor by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Berries.berry_flavor("spicy")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Berries.berry_flavor("spicy")
     assert status == 200
-    assert body["name"] == "spicy"
+    assert name == "spicy"
   end
 
   test "get not found response for a not found berry numeric id" do

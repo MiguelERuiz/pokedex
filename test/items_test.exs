@@ -5,123 +5,123 @@ defmodule ItemsTest do
   doctest Pokedex.Items
 
   test "get item by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item(1)
     assert status == 200
-    assert body["name"] == "master-ball"
+    assert name == "master-ball"
   end
 
   test "get item by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item("1")
     assert status == 200
-    assert body["name"] == "master-ball"
+    assert name == "master-ball"
   end
 
   test "get item by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item(:master_ball)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item(:master_ball)
     assert status == 200
-    assert body["name"] == "master-ball"
+    assert name == "master-ball"
   end
 
   test "get item by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item("master-ball")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item("master-ball")
     assert status == 200
-    assert body["name"] == "master-ball"
+    assert name == "master-ball"
   end
 
   test "get item attribute by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_attribute(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_attribute(1)
     assert status == 200
-    assert body["name"] == "countable"
+    assert name == "countable"
   end
 
   test "get item attribute by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_attribute("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_attribute("1")
     assert status == 200
-    assert body["name"] == "countable"
+    assert name == "countable"
   end
 
   test "get item attribute by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_attribute(:countable)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_attribute(:countable)
     assert status == 200
-    assert body["name"] == "countable"
+    assert name == "countable"
   end
 
   test "get item attribute by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_attribute("countable")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_attribute("countable")
     assert status == 200
-    assert body["name"] == "countable"
+    assert name == "countable"
   end
 
   test "get item category by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_category(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_category(1)
     assert status == 200
-    assert body["name"] == "stat-boosts"
+    assert name == "stat-boosts"
   end
 
   test "get item category by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_category("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_category("1")
     assert status == 200
-    assert body["name"] == "stat-boosts"
+    assert name == "stat-boosts"
   end
 
   test "get item category by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_category(:stat_boosts)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_category(:stat_boosts)
     assert status == 200
-    assert body["name"] == "stat-boosts"
+    assert name == "stat-boosts"
   end
 
   test "get item category by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_category("stat-boosts")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_category("stat-boosts")
     assert status == 200
-    assert body["name"] == "stat-boosts"
+    assert name == "stat-boosts"
   end
 
   test "get item fling effect by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_fling_effect(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_fling_effect(1)
     assert status == 200
-    assert body["name"] == "badly-poison"
+    assert name == "badly-poison"
   end
 
   test "get item fling effect by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_fling_effect("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_fling_effect("1")
     assert status == 200
-    assert body["name"] == "badly-poison"
+    assert name == "badly-poison"
   end
 
   test "get item fling effect by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_fling_effect(:badly_poison)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_fling_effect(:badly_poison)
     assert status == 200
-    assert body["name"] == "badly-poison"
+    assert name == "badly-poison"
   end
 
   test "get item fling effect by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_fling_effect("badly-poison")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_fling_effect("badly-poison")
     assert status == 200
-    assert body["name"] == "badly-poison"
+    assert name == "badly-poison"
   end
 
   test "get item pocket by numeric id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_pocket(1)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_pocket(1)
     assert status == 200
-    assert body["name"] == "misc"
+    assert name == "misc"
   end
 
   test "get item pocket by string id" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_pocket("1")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_pocket("1")
     assert status == 200
-    assert body["name"] == "misc"
+    assert name == "misc"
   end
 
   test "get item pocket by atom name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_pocket(:misc)
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_pocket(:misc)
     assert status == 200
-    assert body["name"] == "misc"
+    assert name == "misc"
   end
 
   test "get item pocket by string name" do
-    assert {:ok, %Tesla.Env{status: status, body: body}} = Pokedex.Items.item_pocket("misc")
+    assert {:ok, %Tesla.Env{status: status, body: %{"name" => name}}} = Pokedex.Items.item_pocket("misc")
     assert status == 200
-    assert body["name"] == "misc"
+    assert name == "misc"
   end
 
   test "get a not found response for a not found numeric item id" do
