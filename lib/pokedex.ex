@@ -12,4 +12,23 @@ defmodule Pokedex do
   def atom_to_pokedex_string(atom) do
     (atom |> Atom.to_string) |> String.replace("_", "-")
   end
+
+  def get_request(url, options \\ []) do
+    url
+    |>
+    get(options)
+    |> parse_result
+  end
+
+  def parse_result({:ok, %Tesla.Env{status: 200, body: body}}) do
+    {:ok, body}
+  end
+
+  def parse_result({:ok, %Tesla.Env{status: 404}}) do
+    {:error, :not_found}
+  end
+
+  def parse_result({:error, :timeout}) do
+    {:error, :timeout}
+  end
 end
