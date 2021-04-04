@@ -9,10 +9,15 @@ defmodule Pokedex do
   plug Tesla.Middleware.Timeout, timeout: 2_000
   plug Tesla.Middleware.JSON
 
+  # Types definition
+  @type t :: atom() | binary()
+
+  @spec atom_to_pokedex_string(atom()) :: binary()
   def atom_to_pokedex_string(atom) do
     (atom |> Atom.to_string) |> String.replace("_", "-")
   end
 
+  @spec get_request(String.t(), list(any())) :: {:ok, struct()} | {:error, atom()}
   def get_request(url, options \\ []) do
     url
     |>
@@ -20,6 +25,7 @@ defmodule Pokedex do
     |> parse_result
   end
 
+  @spec parse_result({:ok, %Tesla.Env{}} | {:error, :timeout}) :: {:ok, struct()} | {:error, atom()}
   def parse_result({:ok, %Tesla.Env{status: 200, body: body}}) do
     {:ok, body}
   end

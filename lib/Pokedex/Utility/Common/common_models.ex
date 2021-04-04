@@ -1,25 +1,26 @@
 defmodule Pokedex.CommonModels do
   @moduledoc false
+
   defmodule NamedApiResource do
     @moduledoc false
 
-    def named_api_resource_result(result) do
-      %{
-        name: result["name"],
-        url: result["url"]
-      }
-    end
+    # Type definition
+    @type t :: %{name: String.t(), url: String.t()}
+
   end
 
   defmodule Name do
     @moduledoc false
 
+    # Type definition
+    @type t :: %{name: String.t(), language: NamedApiResource.t()}
+
     defstruct name: "", language: %{}
 
     def name_result(result) do
-      %__MODULE__{
+      %{
         name: result["name"],
-        language: NamedApiResource.named_api_resource_result(result["language"])
+        language: %{name: result["language"]["name"], url: result["language"]["url"]}
       }
     end
   end

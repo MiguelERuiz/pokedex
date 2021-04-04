@@ -27,7 +27,8 @@ defmodule Pokedex.Mixfile do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
       {:tesla, "~> 1.2.1"},
       {:jason, ">= 1.0.0"}, # optional, required by JSON middleware
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
     ]
   end
 end
